@@ -1,0 +1,16 @@
+[Unit]
+Description=RatRig Discord IP Bot
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+UMask=007
+ExecBefore=source venv/bin/activate
+ExecStart=python3 bot.py
+Restart=on-failure
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target
