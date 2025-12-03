@@ -31,7 +31,7 @@ async def on_ready():
         await new_message.pin()
         with open(".discord_ip_file", "w", encoding="utf-8") as current_ip_file:
             current_ip_file.write(hostname)
-     
+
 
 @ipBot.event
 async def on_message(message):
@@ -47,5 +47,5 @@ async def on_message(message):
         await new_message.pin()
         with open(".discord_ip_file", "w", encoding='utf-8') as current_ip_file:
             current_ip_file.write(hostname)
-            
+
 ipBot.run(token)
