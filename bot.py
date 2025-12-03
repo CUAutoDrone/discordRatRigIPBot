@@ -28,7 +28,7 @@ async def on_ready():
         async for old_message in mes.pins():
             if old_message.author == ipBot.user.id:
                 await old_message.unpin()
-        new_message.pin()
+        await new_message.pin()
         with open(".discord_ip_file", "w", encoding="utf-8") as current_ip_file:
             current_ip_file.write(hostname)
      
@@ -44,7 +44,7 @@ async def on_message(message):
         async for old_message in mes.pins():
             if old_message.author == ipBot.user.id:
                 await old_message.unpin()
-        new_message.pin()
+        await new_message.pin()
         with open(".discord_ip_file", "w", encoding='utf-8') as current_ip_file:
             current_ip_file.write(hostname)
             
