@@ -27,7 +27,7 @@ async def on_ready():
         new_message = await mes.send(mes_to_send)
         async for old_message in mes.pins():
             if old_message.author == ipBot.user.id:
-                old_message.unpin()
+                await old_message.unpin()
         new_message.pin()
         with open(".discord_ip_file", "w", encoding="utf-8") as current_ip_file:
             current_ip_file.write(hostname)
@@ -43,7 +43,7 @@ async def on_message(message):
         new_message = await message.reply(mes_to_send)
         async for old_message in mes.pins():
             if old_message.author == ipBot.user.id:
-                old_message.unpin()
+                await old_message.unpin()
         new_message.pin()
         with open(".discord_ip_file", "w", encoding='utf-8') as current_ip_file:
             current_ip_file.write(hostname)
