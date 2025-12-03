@@ -7,8 +7,7 @@ Type=simple
 User=pi
 Group=pi
 UMask=007
-ExecStartPre=/usr/bin/env source venv/bin/activate
-ExecStart=/usr/bin/env python3 bot.py
+ExecStart=run_bot.sh
 Restart=on-failure
 TimeoutStopSec=300
 
