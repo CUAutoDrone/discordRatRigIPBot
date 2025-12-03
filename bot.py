@@ -17,7 +17,7 @@ async def on_ready():
     hostname = subprocess.check_output("hostname -A", shell=True, text=True)
     hostname = hostname.rstrip()
     try:
-        with open("~/.discord_ip_file", "r", encoding='utf-8') as prev_ip_file:
+        with open(".discord_ip_file", "r", encoding='utf-8') as prev_ip_file:
             prev_hostname = prev_ip_file.read().rstrip()
     except FileNotFoundError:
         prev_hostname = ""
@@ -29,7 +29,7 @@ async def on_ready():
             if old_message.author == ipBot.user.id:
                 old_message.unpin()
         new_message.pin()
-        with open("~/.discord_ip_file", "w", encoding="utf-8") as current_ip_file:
+        with open(".discord_ip_file", "w", encoding="utf-8") as current_ip_file:
             current_ip_file.write(hostname)
      
 
@@ -45,7 +45,7 @@ async def on_message(message):
             if old_message.author == ipBot.user.id:
                 old_message.unpin()
         new_message.pin()
-        with open("~/.discord_ip_file", "w", encoding='utf-8') as current_ip_file:
+        with open(".discord_ip_file", "w", encoding='utf-8') as current_ip_file:
             current_ip_file.write(hostname)
             
 ipBot.run(token)
