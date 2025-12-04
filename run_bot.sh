@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-source venv/bin/activate
-source .env
-python3 bot.py
+cur_dir=$(dirname $0)
+source $cur_dir/venv/bin/activate
+source $cur_dir/.env
+python3 $cur_dir/bot.py
